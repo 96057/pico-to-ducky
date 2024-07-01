@@ -23,7 +23,7 @@ print("please wait until the pico reboots then mount the CIRCUITPY...")
 print("| DONT UNPLUG THE DEVICE |")
 ans = input("when mounted, type 'y' then ENTER >> ")
 
-time.sleep(10)
+time.sleep(5)
 os.system("sudo cp -r "+adafruit+"/lib/adafruit_hid "+pico2+"/lib")
 os.system("sudo cp "+adafruit+"/lib/adafruit_debouncer.mpy "+pico2+"/lib")
 os.system("sudo cp "+adafruit+"/lib/adafruit_ticks.mpy "+pico2+"/lib")
