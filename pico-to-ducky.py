@@ -8,11 +8,11 @@ pico = '/media/'+user+'/RPI-RP2'
 pico2 = '/media/'+user+'/CIRCUITPY'
 
 
-os.system("git clone https://github.com/dbisu/pico-ducky.git")
-os.system("wget https://downloads.circuitpython.org/bin/raspberry_pi_pico/en_US/adafruit-circuitpython-raspberry_pi_pico-en_US-9.0.5.uf2")
-os.system("wget https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20240625/adafruit-circuitpython-bundle-8.x-mpy-20240625.zip")
-os.system("sudo apt install unzip -y")
-os.system("sudo unzip adafruit-circuitpython-bundle-8.x-mpy-20240625.zip")
+#os.system("git clone https://github.com/dbisu/pico-ducky.git")
+#os.system("wget https://downloads.circuitpython.org/bin/raspberry_pi_pico/en_US/adafruit-circuitpython-raspberry_pi_pico-en_US-9.0.5.uf2")
+#os.system("wget https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/download/20240625/adafruit-circuitpython-bundle-8.x-mpy-20240625.zip")
+#os.system("sudo apt install unzip -y")
+#os.system("sudo unzip adafruit-circuitpython-bundle-8.x-mpy-20240625.zip")
 
 clone = 'pico-ducky'
 curcuit = 'adafruit-circuitpython-raspberry_pi_pico-en_US-9.0.5.uf2'
@@ -24,11 +24,11 @@ print("| DONT UNPLUG THE DEVICE |")
 ans = input("when mounted, type 'y' then ENTER >> ")
 
 time.sleep(10)
-os.system("sudo cp "+adafruit+"/lib/adafruit_hid "+pico2+"/lib")
+os.system("sudo cp -r "+adafruit+"/lib/adafruit_hid "+pico2+"/lib")
 os.system("sudo cp "+adafruit+"/lib/adafruit_debouncer.mpy "+pico2+"/lib")
 os.system("sudo cp "+adafruit+"/lib/adafruit_ticks.mpy "+pico2+"/lib")
-os.system("sudo cp "+adafruit+"/lib/asyncio "+pico2+"lib")
-os.system("sudo cp "+adafruit+"/lib/adafruit_wsgi "+pico2+"/lib")
+os.system("sudo cp -r "+adafruit+"/lib/asyncio "+pico2+"/lib")
+os.system("sudo cp -r "+adafruit+"/lib/adafruit_wsgi "+pico2+"/lib")
 os.system("sudo cp "+clone+"/boot.py "+pico2+"/")
 os.system("sudo cp "+clone+"/duckyinpython.py "+pico2+"/")
 os.system("sudo cp "+clone+"/code.py "+pico2+"/")
@@ -64,5 +64,5 @@ print("""
 #################################### 
 """)
 
-Print("Made by 96057")
+print("Made by 96057")
 print("Done.")
